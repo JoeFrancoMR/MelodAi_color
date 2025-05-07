@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #FF6B6B;    /* Coral vibrante */
+    --secondary-color: #4ECDC4;  /* Turquesa refrescante */
+    --accent-color: #FFE66D;     /* Amarillo energético */
+    --dark-color: #2D3047;       /* Azul oscuro sofisticado */
+    --light-color: #F7FFF7;      /* Blanco suave */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+    color: var(--dark-color);
+}
+
+.main-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hero-container {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.season-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.season-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.season-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+}
+
+.season-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.invierno { background-image: url('../img/invierno.jpg'); }
+.primavera { background-image: url('../img/primavera.jpg'); }
+.verano { background-image: url('../img/verano.jpg'); }
+.otonio { background-image: url('../img/otonio.jpg'); }
+
+.season-select {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background: var(--dark-color);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.season-select:hover {
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+}

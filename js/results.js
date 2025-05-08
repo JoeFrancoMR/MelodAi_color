@@ -1,5 +1,5 @@
-/*import { getWeatherByCity, getWeatherRecommendations } from '../api/weather.js';*/
-import { fetchWeatherData, getWeatherRecommendations } from './api/weather.js';
+import { getWeatherByCity, getWeatherRecommendations } from '../api/weather.js';
+/*import { fetchWeatherData, getWeatherRecommendations } from './api/weather.js';*/
 
 
 // Datos REALES de ejemplo (debes completar con tus imágenes)

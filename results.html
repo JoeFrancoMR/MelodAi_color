@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tus Resultados - melany te amo chi?</title>
+    <title>Resultados - Colorimetria.app</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -11,7 +11,7 @@
     <!-- Header -->
     <header class="main-header">
         <nav class="nav-container">
-            <div class="logo">Colorimetria.app</div>
+            <div class="logo">MUSA byMelodAI</div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Guía</a></li>
@@ -23,54 +23,137 @@
     <!-- Result Hero -->
     <main class="result-hero">
         <div class="hero-content">
-            <h1 id="seasonTitle">Tu paleta ideal es</h1>
+            <h1 id="seasonTitle">Tus resultados personalizados</h1>
             <div class="season-badge" id="seasonBadge"></div>
         </div>
     </main>
 
-    <!-- Weather Section -->
-    <!-- Estructura corregida -->
-    <section class="weather-section">
-        <div class="weather-card">
-            <div class="weather-header">
-                <h2>Clima actual</h2>
-                <div class="location-input">
-                    <input type="text" id="cityInput" placeholder="Ingresa tu ciudad">
-                    <button onclick="updateWeather()">Actualizar</button>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sección de información básica -->
+        <section class="result-box guide-section">
+            <h2>¡Hola hermosa! 🌟</h2>
+            <div class="guide-container">
+                <div class="guide-item">
+                    <h3>Tu estación</h3>
+                    <p id="estacion">Primavera</p>
+                </div>
+                <div class="guide-item">
+                    <h3>Tipo de piel</h3>
+                    <p id="piel">Cálida</p>
                 </div>
             </div>
-            <div class="weather-info" id="weatherInfo"></div>
-            <div class="weather-alert" id="weatherAlert"></div> <!-- Alertas separadas -->
-        </div>
-    </section>
+        </section>
 
-    <!-- Color Palette -->
-    <section class="palette-section">
-        <h2>Tu combinación de colores</h2>
-        <div class="color-palette" id="colorPalette"></div>
-    </section>
+        <!-- Paleta de colores -->
+        <section class="palette-section">
+            <h2>🎨 Paleta recomendada</h2>
+            <div class="color-palette" id="colorPalette"></div>
+        </section>
 
-    <!-- Recommendations -->
-    <section class="recommendations-section">
-        <div class="recommendations-container">
-            <div class="category-selector">
-                <button class="category-btn active" data-category="ropa">Ropa</button>
-                <button class="category-btn" data-category="maquillaje">Maquillaje</button>
-                <button class="category-btn" data-category="accesorios">Accesorios</button>
+        <!-- Recomendaciones de ropa -->
+        <section class="recommendations-section">
+            <h2>👗 Prendas ideales</h2>
+            <div class="recommendations-grid active" id="prendaLista"></div>
+        </section>
+
+        <!-- Selector de ciudad -->
+        <section class="weather-section">
+            <div class="weather-card">
+                <div class="weather-header">
+                    <h2>Recomendaciones por clima</h2>
+                    <div class="location-input">
+                        <input type="text" id="ciudad" placeholder="Ej: Lima, Bogotá, Madrid">
+                        <button onclick="mostrarClima()">Actualizar</button>
+                    </div>
+                </div>
+                <div id="climaRecomendacion" class="weather-info"></div>
             </div>
-            
-            <div class="recommendations-grid active" data-category="ropa"></div>
-            <div class="recommendations-grid" data-category="maquillaje"></div>
-            <div class="recommendations-grid" data-category="accesorios"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seasonal Guide -->
-    <section class="guide-section">
-        <h2>Características de tu estación</h2>
-        <div class="guide-container" id="seasonGuide"></div>
-    </section>
+        <!-- Consejo de estilo -->
+        <section class="guide-section">
+            <div class="guide-item tip-box">
+                <h3>💡 Consejo de estilo</h3>
+                <p>Usa colores cerca de tu rostro que armonicen con tu estación para resaltar tu belleza natural.</p>
+            </div>
+        </section>
+    </div>
 
-    <script type="module" src="js/results.js"></script>
+    <script>
+        // Datos por estación (mantenido igual)
+        const datosEstacion = {
+            "Primavera": {
+                colores: ['#FFDAB9', '#FFB6C1', '#FF69B4', '#FFA07A'],
+                prendas: ['Vestido floral', 'Blusas en tonos pastel', 'Chaqueta beige', 'Pantalón blanco']
+            },
+            "Verano": {
+                colores: ['#E0FFFF', '#B0E0E6', '#AFEEEE', '#ADD8E6'],
+                prendas: ['Falda celeste', 'Top blanco', 'Vestido azul cielo', 'Shorts claros']
+            },
+            "Otoño": {
+                colores: ['#D2691E', '#CD853F', '#F4A460', '#8B4513'],
+                prendas: ['Suéter mostaza', 'Pantalón terracota', 'Bufanda marrón', 'Abrigo oliva']
+            },
+            "Invierno": {
+                colores: ['#000080', '#708090', '#2F4F4F', '#8B0000'],
+                prendas: ['Abrigo negro', 'Pantalón gris oscuro', 'Blusa vino tinto', 'Botas negras']
+            }
+        };
+
+        // Obtener valores de sesión/localStorage
+        const estacion = localStorage.getItem('estacion') || 'Primavera';
+        const piel = localStorage.getItem('piel') || 'Cálida';
+
+        // Actualizar la UI
+        document.getElementById('estacion').textContent = estacion;
+        document.getElementById('piel').textContent = piel;
+        document.getElementById('seasonTitle').textContent = `Bienvenida, ${estacion}`;
+        document.getElementById('seasonBadge').textContent = estacion;
+
+        // Mostrar paleta
+        const paleta = datosEstacion[estacion].colores;
+        const paletteDiv = document.getElementById('colorPalette');
+        paleta.forEach(color => {
+            const div = document.createElement('div');
+            div.className = 'color-item';
+            div.style.backgroundColor = color;
+            div.innerHTML = `<span>${color}</span>`;
+            paletteDiv.appendChild(div);
+        });
+
+        // Mostrar prendas
+        const prendas = datosEstacion[estacion].prendas;
+        const prendaLista = document.getElementById('prendaLista');
+        prendas.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'recommendation-card';
+            div.innerHTML = `
+                <div class="recommendation-info">
+                    <h3>${item}</h3>
+                    <p>Recomendación para ${estacion}</p>
+                </div>
+            `;
+            prendaLista.appendChild(div);
+        });
+
+        // Mostrar recomendación climática
+        function mostrarClima() {
+            const ciudad = document.getElementById('ciudad').value.trim();
+            const recomendacion = document.getElementById('climaRecomendacion');
+
+            if (!ciudad) {
+                alert('Por favor, ingresa una ciudad');
+                return;
+            }
+
+            recomendacion.innerHTML = `
+                <div class="weather-item">
+                    <h3>🌤 Recomendación para ${ciudad}</h3>
+                    <p>Parece que el clima estará templado esta semana. Usa capas ligeras y no olvides tu protector solar si eres piel cálida ☀️</p>
+                </div>
+            `;
+        }
+    </script>
 </body>
 </html>

@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (selectedSeason) {
                 // Guardar estación seleccionada en localStorage
-                localStorage.setItem('estacion', selectedSeason);
+                localStorage.setItem('estacion', selectedSeason.charAt(0).toUpperCase() + selectedSeason.slice(1));
+
 
                 // Feedback visual (opcional)
                 card.classList.add('selected');

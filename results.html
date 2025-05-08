@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus Resultados - melany te amo chi?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">Colorimetria.app</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Guía</a></li>
+                <li><a href="results.html">Resultados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Result Hero -->
+    <main class="result-hero">
+        <div class="hero-content">
+            <h1 id="seasonTitle">Tu paleta ideal es</h1>
+            <div class="season-badge" id="seasonBadge"></div>
+        </div>
+    </main>
+
+    <!-- Weather Section -->
+    <!-- Estructura corregida -->
+    <section class="weather-section">
+        <div class="weather-card">
+            <div class="weather-header">
+                <h2>Clima actual</h2>
+                <div class="location-input">
+                    <input type="text" id="cityInput" placeholder="Ingresa tu ciudad">
+                    <button onclick="updateWeather()">Actualizar</button>
+                </div>
+            </div>
+            <div class="weather-info" id="weatherInfo"></div>
+            <div class="weather-alert" id="weatherAlert"></div> <!-- Alertas separadas -->
+        </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section class="palette-section">
+        <h2>Tu combinación de colores</h2>
+        <div class="color-palette" id="colorPalette"></div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendations-section">
+        <div class="recommendations-container">
+            <div class="category-selector">
+                <button class="category-btn active" data-category="ropa">Ropa</button>
+                <button class="category-btn" data-category="maquillaje">Maquillaje</button>
+                <button class="category-btn" data-category="accesorios">Accesorios</button>
+            </div>
+            
+            <div class="recommendations-grid active" data-category="ropa"></div>
+            <div class="recommendations-grid" data-category="maquillaje"></div>
+            <div class="recommendations-grid" data-category="accesorios"></div>
+        </div>
+    </section>
+
+    <!-- Seasonal Guide -->
+    <section class="guide-section">
+        <h2>Características de tu estación</h2>
+        <div class="guide-container" id="seasonGuide"></div>
+    </section>
+
+    <script type="module" src="js/results.js"></script>
+</body>
+</html>

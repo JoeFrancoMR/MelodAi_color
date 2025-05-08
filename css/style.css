@@ -61,10 +61,23 @@ body {
     color: var(--primary-color);
 }
 
-.hero-container {
+/*.hero-container {
     padding: 8rem 2rem 4rem;
     text-align: center;
+}*/
+/* Nuevos estilos para el index */
+.season-main {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
 }
+
+.season-title {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 3rem;
+}
+
+/* Eliminar el hero-container anterior */
 
 .hero-content h1 {
     font-size: 2.5rem;
@@ -162,4 +175,479 @@ body {
     .season-grid {
         grid-template-columns: 1fr;
     }
+}
+/* About Page Styles */
+.about-hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.guide-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.content-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.content-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.styled-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.styled-list li {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: var(--light-color);
+    border-radius: 8px;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.styled-list li::before {
+    content: '🎨';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.steps-section {
+    padding: 4rem 2rem;
+    background: var(--light-color);
+}
+
+.steps-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.steps-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+}
+
+.science-section {
+    padding: 4rem 2rem;
+    background: var(--dark-color);
+    color: white;
+}
+
+.color-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.color-card {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.color-card:hover {
+    transform: scale(1.05);
+}
+
+.team-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.methodology-card {
+    padding: 2rem;
+    background: var(--light-color);
+    border-radius: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .color-card {
+        min-height: 150px;
+    }
+}
+/* Results Page Styles */
+.result-hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--dark-color) 0%, #3a3f5c 100%);
+    color: white;
+}
+
+.season-badge {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    background: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.palette-section {
+    padding: 4rem 2rem;
+    background: var(--light-color);
+}
+
+.color-palette {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.color-item {
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.color-item:hover {
+    transform: scale(1.05);
+}
+
+.recommendations-section {
+    padding: 4rem 2rem;
+}
+
+.category-selector {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    background: var(--light-color);
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.recommendations-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recommendations-grid.active {
+    display: grid;
+}
+
+.recommendation-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.recommendation-info {
+    padding: 1.5rem;
+}
+
+.recommendation-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.recommendation-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.guide-section {
+    padding: 4rem 2rem;
+    background: var(--light-color);
+}
+
+.guide-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.guide-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.guide-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .color-item {
+        height: 100px;
+        font-size: 0.9rem;
+    }
+    
+    .category-selector {
+        flex-wrap: wrap;
+    }
+}
+/* Weather Section */
+.weather-section {
+    padding: 2rem;
+    background: var(--light-color);
+}
+
+.weather-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.location-input input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+}
+
+.location-input button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.location-input button:hover {
+    transform: translateY(-2px);
+}
+
+.weather-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.weather-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--light-color);
+    border-radius: 10px;
+}
+
+.weather-item h3 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background-size: contain;
+}
+.weather-alert {
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.weather-alert.rain {
+    background: #BDE0FE;
+    color: #1E3A8A;
+}
+
+.weather-alert.cold {
+    background: #BFDBFE;
+    color: #1E3A8A;
+}
+
+.weather-alert.hot {
+    background: #FECACA;
+    color: #991B1B;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+.season-subtitle {
+    color: var(--dark-color);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.season-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.season-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .season-title {
+        font-size: 2rem;
+    }
+}
+/* Agregar en style.css */
+.weather-alert p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.recommendation-card.clima {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }

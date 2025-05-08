@@ -3,57 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorimetria.app - Descubre tu Estación</title>
+    <meta name="description" content="Descubre tu paleta de colores ideal según tu estación colorimétrica">
+    <title>MelodiAI - Tu Asesor de Colorimetría</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="main-header">
         <nav class="nav-container">
-            <div class="logo">Colorimetria.app</div>
+            <div class="logo">melany te amo chi?</div>
+            <button class="mobile-menu" aria-label="Abrir menú">☰</button>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Guía</a></li>
-                <li><a href="results.html">Resultados</a></li>
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="about.html" class="nav-link">Guía</a></li>
+                <li><a href="results.html" class="nav-link">Resultados</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <main class="hero-container">
-        <div class="hero-content">
-            <!--<h1>Descubre tu paleta de colores ideal</h1>-->
-            <h1> que pongo aqui saian? paleta de colores?</h1>
-            <!--<p>Encuentra los colores que mejor armonizan con tus características naturales</p>-->
-            <p>sugerencias de colores? colores que armonizan?</p>
-            <button class="cta-button" onclick="startAnalysis()">Comenzar Análisis</button>
+    <main class="season-main">
+        <h1 class="season-title">Descubre tu estación colorimétrica</h1>
+        <p class="season-subtitle">Selecciona tu temporada para ver recomendaciones personalizadas</p>
+        
+        <div class="season-grid">
+            <article class="season-card" data-season="invierno">
+                <div class="season-image invierno" role="img" aria-label="Ejemplo de colores invernales"></div>
+                <button class="season-select" aria-labelledby="invierno-title">
+                    <span id="invierno-title">Invierno</span>
+                    <span class="season-desc">Tonos fríos e intensos</span>
+                </button>
+            </article>
+
+            <article class="season-card" data-season="primavera">
+                <div class="season-image primavera" role="img" aria-label="Ejemplo de colores primaverales"></div>
+                <button class="season-select" aria-labelledby="primavera-title">
+                    <span id="primavera-title">Primavera</span>
+                    <span class="season-desc">Pasteles y florales</span>
+                </button>
+            </article>
+
+            <article class="season-card" data-season="verano">
+                <div class="season-image verano" role="img" aria-label="Ejemplo de colores veraniegos"></div>
+                <button class="season-select" aria-labelledby="verano-title">
+                    <span id="verano-title">Verano</span>
+                    <span class="season-desc">Tonos frescos y claros</span>
+                </button>
+            </article>
+
+            <article class="season-card" data-season="otoño">
+                <div class="season-image otonio" role="img" aria-label="Ejemplo de colores otoñales"></div>
+                <button class="season-select" aria-labelledby="otonio-title">
+                    <span id="otonio-title">Otoño</span>
+                    <span class="season-desc">Terrosos y cálidos</span>
+                </button>
+            </article>
         </div>
     </main>
 
-    <!-- Season Selection -->
-    <section class="season-section">
-        <h2>Selecciona tu estación</h2>
-        <div class="season-grid">
-            <div class="season-card" data-season="invierno">
-                <div class="season-image invierno"></div>
-                <button class="season-select">Invierno</button>
-            </div>
-            <div class="season-card" data-season="primavera">
-                <div class="season-image primavera"></div>
-                <button class="season-select">Primavera</button>
-            </div>
-            <div class="season-card" data-season="verano">
-                <div class="season-image verano"></div>
-                <button class="season-select">Verano</button>
-            </div>
-            <div class="season-card" data-season="otonio">
-                <div class="season-image otonio"></div>
-                <button class="season-select">Otoño</button>
-            </div>
-        </div>
-    </section>
-
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
